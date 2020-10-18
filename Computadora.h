@@ -2,6 +2,7 @@
 #define COMPUTADORA_H
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 class Computadora
 {
@@ -22,6 +23,34 @@ class Computadora
         int getDisco_duro();
         void setMemoria_ram(int v);
         int getMemoria_ram();
+        friend ostream& operator<<(ostream &out, const Computadora &p)
+        {
+            out << left;
+            out <<setw(12)<<p.nombre_equipo;
+            out <<setw(13)<<p.sistema_operativo ;
+            out <<setw(6)<<p.disco_duro ;
+            out <<setw(6)<<p.memoria_ram ;
+            out <<endl;
+            return out;
+        }
+        friend istream& operator>>(istream &in, Computadora &p)
+        {
+            //string temp;
+            //int p.disco_duro,p.memoria_ram;
+            cout << "Nombre:";
+            getline(cin,p.nombre_equipo);
+
+            cout << "Sistema operativo:";
+            getline(cin,p.sistema_operativo);
+
+            cout << "Disco duro:";
+            cin >>p.disco_duro;
+
+            cout << "Memoria RAM:";
+            cin >>p.memoria_ram;
+
+            return in;
+        }
 
 };
 

@@ -1,0 +1,12 @@
+clets
+linux
+1000
+8
+Mikelson
+Windows
+2000
+8
+Pastrie
+MacOS
+4000
+4
